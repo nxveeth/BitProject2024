@@ -1,0 +1,71 @@
+<mat-grid-list gutterSize="7" [cols]="4" rowHeight="4rem">
+
+  <mat-grid-tile [colspan]="4" [rowspan]="2" >
+    <mat-card style="background-image: url('assets/bluebanner.png')"><img id="headImg" src="assets/brisca-brandmark.png"></mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile [colspan]="4" [rowspan]="4" id="quicklinks">
+    <mat-card>
+      <mat-card-content><img  src="assets/Client.jpg"></mat-card-content>
+      <mat-card-footer ><a routerLink="payments">Clients</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img  src="assets/Employees.jpg"></mat-card-content>
+      <mat-card-footer ><a routerLink="batchregistration" >Employees</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img  src="assets/Reports.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="students">Reports</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img  src="assets/Leads.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="classes">Leads</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img  src="assets/Tasks.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="books">Tasks</a></mat-card-footer>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-content><img  src="assets/Notification.png"></mat-card-content>
+      <mat-card-footer ><a routerLink="attendance">Notifications</a></mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile [colspan]="2" [rowspan]="4" >
+    <mat-card>
+      <mat-card-title style="background-image: url('assets/bluebanner.png')">User Specific Messages</mat-card-title>
+      <mat-card-content >
+        <mat-list>
+          <mat-list-item *ngFor="let message of userspecmessages">
+            <mat-icon matListItemIcon> email</mat-icon>
+            <div matListItemTitle >{{message.name}}</div>
+            <div matListItemLine>{{message.updated | date}}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+
+  <mat-grid-tile [colspan]="2" [rowspan]="4" >
+      <mat-card>
+        <mat-card-title style="background-image: url('assets/bluebanner.png')">General Messages</mat-card-title>
+        <mat-card-content >
+          <mat-list>
+            <mat-list-item *ngFor="let message of generalmessages">
+              <mat-icon matListItemIcon> email</mat-icon>
+              <div matListItemTitle >{{message.name}}</div>
+              <div matListItemLine>{{message.updated | date}}</div>
+            </mat-list-item>
+          </mat-list>
+        </mat-card-content>
+      </mat-card>
+  </mat-grid-tile>
+
+</mat-grid-list>
